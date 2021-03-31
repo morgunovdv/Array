@@ -10,7 +10,7 @@ namespace Array
             Random rdn = new Random();
             for (int i =0; i<nums.Length; i++)
             {
-                nums[i] = rdn.Next(101);
+                nums[i] = rdn.Next(1,101);
             }
         }
 
@@ -52,13 +52,10 @@ namespace Array
             {
                 Console.WriteLine("Вы не ввели число");
             }
-            
             int[] nums = new int[n];
-            
             Fillrand(nums);
             Sort(nums);
             int[] nums1 = nums.Distinct().ToArray();
-           
             ArrayShow(nums1);
             int M = nums1[1];
             Console.WriteLine("\n Второе по величине число в массиве: {0}", M);
