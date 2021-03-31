@@ -39,10 +39,6 @@ namespace Array
             }
             return s;
         }
-        
-        
-
-        
 
         static void Main(string[] args)
         {
@@ -59,9 +55,7 @@ namespace Array
             ArrayShow(nums1);
             int M = nums1[1];
             Console.WriteLine("\n Второе по величине число в массиве: {0}", M);
-           
             Console.ReadKey();
-
         }
     }
 }
