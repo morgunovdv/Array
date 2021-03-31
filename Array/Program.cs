@@ -22,38 +22,9 @@ namespace Array
             }
         }
 
-        //static int Sort(int [] nums)
-        //{
-        //    int s = 0;
-        //    int[] nums1 = new int [0];
-        //    for (int i =1; i<nums1.Length; i++)
-        //    {
-        //        for (int j = 0; j < nums1.Length - 1; j++)
-        //        {
-        //            if (nums1[j] > nums1[j + 1])
-        //            {
-        //                s = nums1[j + 1];
-        //                nums1[j + 1] = nums1[j];
-        //                nums1[j] = s;
-        //            }
-        //        }
-        //    }
-        //    return s;
-        //}
-
-        
-
-        static void Main(string[] args)
+        static int Sort(int [] nums)
         {
-            int n;
-            Console.WriteLine("Введите длину массива");
-            while (!int.TryParse(Console.ReadLine(), out n))
-            {
-                Console.WriteLine("Вы не ввели число");
-            }
-            int s;
-            int[] nums = new int[n];
-            Fillrand(nums);
+            int s = nums[0];
             for (int i = 1; i < nums.Length; i++)
             {
                 for (int j = 0; j < nums.Length - 1; j++)
@@ -66,10 +37,28 @@ namespace Array
                     }
                 }
             }
+            return s;
+        }
+        
+        
 
+        
+
+        static void Main(string[] args)
+        {
+            int n;
+            Console.WriteLine("Введите длину массива");
+            while (!int.TryParse(Console.ReadLine(), out n))
+            {
+                Console.WriteLine("Вы не ввели число");
+            }
+            
+            int[] nums = new int[n];
+            
+            Fillrand(nums);
+            Sort(nums);
             int[] nums1 = nums.Distinct().ToArray();
-            
-            
+           
             ArrayShow(nums1);
             int M = nums1[1];
             Console.WriteLine("\n Второе по величине число в массиве: {0}", M);
